@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: chatbot6-0618
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/yangcao/chatbot:latest # use pre-built to bootstrap 
-        name: app-inference 
+        - image: quay.io/yangcao/chatbot6-0618:bf405fe843ad3ccf54cb67172e4402c90c33ef4c@sha256:a5e7f3a0f029f707e92aaa838ae5c13a1e525dbb5eb84c2cd0b255620e4b1f61 # use pre-built to bootstrap 
+          name: app-inference
